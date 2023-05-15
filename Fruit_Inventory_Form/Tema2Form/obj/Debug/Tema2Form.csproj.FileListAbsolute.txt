@@ -1,0 +1,11 @@
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\bin\Debug\Tema2Form.exe.config
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\bin\Debug\Tema2Form.exe
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\bin\Debug\Tema2Form.pdb
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\obj\Debug\Tema2Form.csproj.AssemblyReference.cache
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\obj\Debug\Tema2Form.csproj.SuggestedBindingRedirects.cache
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\obj\Debug\Tema2Form.Form1.resources
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\obj\Debug\Tema2Form.Properties.Resources.resources
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\obj\Debug\Tema2Form.csproj.GenerateResource.cache
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\obj\Debug\Tema2Form.csproj.CoreCompileInputs.cache
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\obj\Debug\Tema2Form.exe
+D:\Faculta\II\Lab\Tema2Form\Tema2Form\obj\Debug\Tema2Form.pdb

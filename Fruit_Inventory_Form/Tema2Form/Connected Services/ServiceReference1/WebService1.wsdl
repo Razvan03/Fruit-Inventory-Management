@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetShoppingListItems">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShoppingListItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShoppingListItemsResult" type="tns:ArrayOfShoppingListItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShoppingListItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShoppingListItem" nillable="true" type="tns:ShoppingListItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShoppingListItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddShoppingListItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:ShoppingListItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShoppingListItemResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateShoppingListItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:ShoppingListItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShoppingListItemResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteShoppingListItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteShoppingListItemResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShoppingListItemsSortedByPrice">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShoppingListItemsSortedByPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShoppingListItemsSortedByPriceResult" type="tns:ArrayOfShoppingListItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTotalValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTotalValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTotalValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetShoppingListItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShoppingListItems" />
+  </wsdl:message>
+  <wsdl:message name="GetShoppingListItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShoppingListItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddShoppingListItemSoapIn">
+    <wsdl:part name="parameters" element="tns:AddShoppingListItem" />
+  </wsdl:message>
+  <wsdl:message name="AddShoppingListItemSoapOut">
+    <wsdl:part name="parameters" element="tns:AddShoppingListItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShoppingListItemSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateShoppingListItem" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShoppingListItemSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateShoppingListItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShoppingListItemSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteShoppingListItem" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShoppingListItemSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteShoppingListItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShoppingListItemsSortedByPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShoppingListItemsSortedByPrice" />
+  </wsdl:message>
+  <wsdl:message name="GetShoppingListItemsSortedByPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShoppingListItemsSortedByPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTotalValue" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTotalValueResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="GetShoppingListItems">
+      <wsdl:input message="tns:GetShoppingListItemsSoapIn" />
+      <wsdl:output message="tns:GetShoppingListItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShoppingListItem">
+      <wsdl:input message="tns:AddShoppingListItemSoapIn" />
+      <wsdl:output message="tns:AddShoppingListItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShoppingListItem">
+      <wsdl:input message="tns:UpdateShoppingListItemSoapIn" />
+      <wsdl:output message="tns:UpdateShoppingListItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShoppingListItem">
+      <wsdl:input message="tns:DeleteShoppingListItemSoapIn" />
+      <wsdl:output message="tns:DeleteShoppingListItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingListItemsSortedByPrice">
+      <wsdl:input message="tns:GetShoppingListItemsSortedByPriceSoapIn" />
+      <wsdl:output message="tns:GetShoppingListItemsSortedByPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalValue">
+      <wsdl:input message="tns:GetTotalValueSoapIn" />
+      <wsdl:output message="tns:GetTotalValueSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetShoppingListItems">
+      <soap:operation soapAction="http://tempuri.org/GetShoppingListItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShoppingListItem">
+      <soap:operation soapAction="http://tempuri.org/AddShoppingListItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShoppingListItem">
+      <soap:operation soapAction="http://tempuri.org/UpdateShoppingListItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShoppingListItem">
+      <soap:operation soapAction="http://tempuri.org/DeleteShoppingListItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingListItemsSortedByPrice">
+      <soap:operation soapAction="http://tempuri.org/GetShoppingListItemsSortedByPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalValue">
+      <soap:operation soapAction="http://tempuri.org/GetTotalValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetShoppingListItems">
+      <soap12:operation soapAction="http://tempuri.org/GetShoppingListItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShoppingListItem">
+      <soap12:operation soapAction="http://tempuri.org/AddShoppingListItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShoppingListItem">
+      <soap12:operation soapAction="http://tempuri.org/UpdateShoppingListItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShoppingListItem">
+      <soap12:operation soapAction="http://tempuri.org/DeleteShoppingListItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingListItemsSortedByPrice">
+      <soap12:operation soapAction="http://tempuri.org/GetShoppingListItemsSortedByPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalValue">
+      <soap12:operation soapAction="http://tempuri.org/GetTotalValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44315/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44315/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
